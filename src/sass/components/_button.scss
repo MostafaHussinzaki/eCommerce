@@ -1,0 +1,24 @@
+@use "../abstract/mixins" as M;
+@use "../abstract/variables" as V;
+@use "../abstract/functions" as F;
+
+.button {
+	border: none;
+	outline: none;
+	color: V.$white;
+	font-weight: 600;
+	background-color: V.$cyanDark;
+	// width: 100%;
+	padding: F.toem(12) F.toem(24);
+	transition: all;
+	transition-duration: 250ms;
+	cursor: pointer;
+	a {
+		display: inline-block;
+		width: 100%;
+	}
+}
+
+.button:hover {
+	background-color: V.$cyanNorm;
+}

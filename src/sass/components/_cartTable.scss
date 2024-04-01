@@ -1,0 +1,85 @@
+@use "../abstract/mixins" as M;
+@use "../abstract/variables" as V;
+@use "../abstract/functions" as F;
+
+// @include M.respond-up(V.$small-screen) {
+//     flex-direction: column;
+// }
+
+.cart-page__table {
+	border: 1px solid V.$lightGray;
+	thead {
+		background-color: V.$mainColor;
+		@include M.respond-up(V.$large-screen) {
+			display: none;
+		}
+		th {
+			border-bottom: 1px solid V.$lightGray;
+			padding: F.toem(13) F.toem(16);
+			color: V.$grayishBlue;
+			font-weight: 600;
+		}
+	}
+
+	background-color: V.$white;
+	tbody {
+		border-collapse: collapse;
+		tr {
+			border-bottom: 1px solid V.$grayishBlue;
+			@include M.respond-up(V.$large-screen) {
+				display: flex;
+				flex-direction: column;
+			}
+			.no-padding {
+				padding-inline: 0;
+				@include M.respond-up(V.$large-screen) {
+					padding-inline: F.toem(10);
+				}
+			}
+			td {
+				padding: F.toem(13) F.toem(10);
+				@include M.respond-up(V.$large-screen) {
+					display: flex;
+					justify-content: space-between;
+				}
+				.mobile-label {
+					display: none;
+					font-weight: 600;
+					color: V.$grayishBlue;
+
+					@include M.respond-up(V.$large-screen) {
+						display: block;
+					}
+				}
+				@include M.respond-up(V.$large-screen) {
+					border-bottom: 1px solid V.$lightGray;
+				}
+				a {
+					color: V.$cyanNorm;
+				}
+			}
+			.delete-button {
+				cursor: pointer;
+				img {
+					@include M.respond-up(V.$large-screen) {
+						margin: 0 0 0 auto;
+					}
+					min-width: 20px;
+					max-width: 20px;
+				}
+			}
+			.table-product__img {
+				img {
+					@include M.respond-up(V.$large-screen) {
+						margin: 0 auto;
+					}
+					max-width: 70px;
+					min-width: 70px;
+				}
+			}
+			.table-price {
+				color: V.$grayishBlue;
+			}
+		}
+	}
+}

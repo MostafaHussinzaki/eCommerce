@@ -1,0 +1,99 @@
+@use "../abstract/mixins" as M;
+@use "../abstract/variables" as V;
+@use "../abstract/functions" as F;
+
+.landing {
+	background-image: url(../../assets//background.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	margin-top: F.toem(20);
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+
+	.card {
+		background-color: V.$white;
+		width: 50%;
+		margin-top: F.toem(70);
+		margin-left: auto;
+		justify-self: flex-end;
+		align-self: center;
+		padding: F.toem(32);
+
+		h1 {
+			width: 80%;
+			font-weight: 600;
+		}
+		p {
+			margin-top: F.toem(10);
+			color: V.$grayishBlue;
+		}
+
+		a {
+			margin-top: F.toem(10);
+			color: V.$cyanNorm;
+			font-weight: 600;
+		}
+
+		@include M.respond-up(V.$medium-screen) {
+			margin-top: F.toem(150);
+			width: 100%;
+
+			h1 {
+				width: 100%;
+			}
+		}
+	}
+
+	.pros {
+		background-color: V.$white;
+		margin-top: 8em;
+		padding: F.toem(24);
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		border: solid 1px V.$lightGray;
+
+		@include M.respond-up(V.$large-screen) {
+			margin-top: 8em;
+		}
+		@include M.respond-up(V.$medium-screen) {
+			margin-top: 6em;
+		}
+		@include M.respond-up(V.$small-screen) {
+			margin-top: 2em;
+		}
+
+		> div {
+			display: flex;
+			align-content: flex-start;
+			justify-content: space-between;
+			width: 23%;
+			@include M.respond-up(V.$medium-screen) {
+				padding-top: F.toem(10);
+				width: 47%;
+				justify-content: flex-start;
+			}
+			img {
+				width: 30px;
+				min-width: 30px;
+				height: 30px;
+				@include M.respond-up(V.$small-screen) {
+					width: 20px;
+					min-width: 20px;
+					height: 20px;
+				}
+			}
+			> div {
+				padding-left: F.toem(10);
+				h3 {
+					font-weight: 500;
+				}
+				p {
+					color: V.$grayishBlue;
+				}
+			}
+		}
+	}
+}

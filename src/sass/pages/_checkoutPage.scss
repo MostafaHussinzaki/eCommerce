@@ -1,0 +1,138 @@
+@use "../abstract/functions" as F;
+@use "../abstract/mixins" as M;
+@use "../abstract/variables" as V;
+
+// @include M.respond-up(V.$small-screen) {
+//     flex-direction: column;
+// }
+
+.checkout-page {
+	margin-top: V.$xs-padding;
+	margin-bottom: V.$xs-padding;
+	> h1 {
+		color: V.$cyanNorm;
+		font-size: 2.5rem;
+		font-weight: 600;
+		padding-bottom: 0.625em;
+	}
+
+	.checkout-data {
+		display: flex;
+		justify-content: space-between;
+		@include M.respond-up(V.$medium-screen) {
+			flex-direction: column;
+		}
+
+		&__form {
+			width: 55%;
+			@include M.respond-up(V.$medium-screen) {
+				width: 100%;
+			}
+
+			> form {
+				h2 {
+					font-size: 1.2rem;
+					padding: F.toem(20) 0 F.toem(14);
+					margin: 0 0 F.toem(20);
+					border-bottom: 1px solid V.$lightGray;
+					font-weight: 700;
+					width: fit-content;
+				}
+			}
+			.checkout-data__form__customer {
+				input {
+					width: 100%;
+				}
+			}
+			.checkout-data__form__billing {
+				div {
+					input {
+						width: 49%;
+					}
+				}
+				.option {
+					label {
+						color: V.$pureGray;
+					}
+					select {
+						width: 100%;
+						margin-bottom: F.toem(10);
+						color: V.$grayishBlue;
+					}
+				}
+				input {
+					width: 100%;
+					margin-bottom: F.toem(10);
+				}
+			}
+			.checkout-data__form__additional {
+				textarea {
+					width: 100%;
+				}
+				span {
+					width: 100%;
+					input {
+						width: 80%;
+						margin-right: F.toem(20);
+					}
+					// button {
+					// 	width: calc(20% - F.toem(20));
+					// }
+				}
+			}
+		}
+		&__cart {
+			position: sticky;
+			top: 1em;
+			width: 40%;
+			padding-bottom: F.toem(20);
+			height: fit-content;
+			@include M.respond-up(V.$medium-screen) {
+				width: 100%;
+			}
+
+			> h2 {
+				font-size: 1.2rem;
+				padding: F.toem(20) 0 F.toem(14);
+				margin: 0 0 F.toem(20);
+				font-weight: 700;
+				width: fit-content;
+			}
+			> div {
+				padding: F.toem(10);
+				border: 1px solid V.$lightGray;
+				background-color: V.$white;
+				.titless {
+					display: flex;
+					justify-content: space-between;
+					border-bottom: 1px solid V.$lightGray;
+					padding: F.toem(10) 0;
+				}
+			}
+		}
+	}
+}
+
+.checkout-item {
+	display: flex;
+	padding: F.toem(10) 0;
+	border-bottom: 1px solid V.$lightGray;
+	.dodo {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		padding-right: 0;
+		color: V.$grayishBlue;
+		img {
+			width: F.toem(50);
+			max-width: 100%;
+			height: 50px;
+			border-radius: 4px;
+			margin-right: 10px;
+		}
+	}
+	.soso {
+		display: flex;
+		align-items: center;
+	}
+}

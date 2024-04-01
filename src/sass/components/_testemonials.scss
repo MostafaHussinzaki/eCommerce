@@ -1,0 +1,48 @@
+@use "../abstract/mixins" as M;
+@use "../abstract/variables" as V;
+@use "../abstract/functions" as F;
+
+// @include M.respond-up(V.$small-screen) {
+//     flex-direction: column;
+// }
+
+.testemonials {
+	margin-top: V.$slg-padding;
+	margin-inline: 20px;
+	> div {
+		> h1 {
+			color: V.$cyanNorm;
+			font-weight: 700;
+			font-size: F.torem(25);
+			margin-bottom: F.toem(15);
+			@include M.respond-up(V.$small-screen) {
+				font-size: F.torem(20);
+			}
+		}
+		> div {
+			width: 100%;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 20px;
+			@include M.respond-up(V.$medium-screen) {
+				grid-template-columns: 1fr;
+			}
+			> .testemonial {
+				background-color: V.$white;
+				padding: F.toem(20);
+
+				
+				.pargraph {
+					margin-top: F.toem(10);
+					color: V.$pureGray;
+				}
+
+				> h3 {
+					color: V.$black;
+					font-weight: 500;
+					margin-top: F.toem(15);
+				}
+			}
+		}
+	}
+}

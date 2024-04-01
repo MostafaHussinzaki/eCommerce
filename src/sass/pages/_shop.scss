@@ -1,0 +1,55 @@
+@use "../abstract/functions" as F;
+@use "../abstract/mixins" as M;
+@use "../abstract/variables" as V;
+
+.shop {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	margin-top: V.$xs-padding;
+	gap: 20px;
+	padding-bottom: F.toem(20);
+	@include M.respond-up(V.$medium-screen) {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr auto;
+	}
+	> aside {
+		grid-column: span 2;
+		@include M.respond-up(V.$medium-screen) {
+			grid-row: 2/3;
+		}
+	}
+	> div {
+		grid-column: span 5;
+		padding-top: F.toem(40);
+		> h1 {
+			font-size: V.$fs-huge-m;
+			font-weight: 600;
+			color: V.$cyanLight;
+			@include M.respond-up(V.$small-screen) {
+				font-size: V.$fs-huge-s;
+			}
+		}
+		> :nth-child(2) {
+			display: flex;
+			justify-content: space-between;
+			padding: F.toem(20);
+			p {
+				color: V.$grayishBlue
+			}
+		}
+		.products-container {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			@include M.respond-up(V.$small-screen) {
+				grid-template-columns: repeat(1, 1fr);
+			}
+			gap: F.toem(20);
+		}
+	}
+}
+
+// @include M.respond-up(V.$medium-screen) {
+// 	grid-template-columns: 1fr;
+// 	justify-content: center;
+// 	text-align: center;
+// }

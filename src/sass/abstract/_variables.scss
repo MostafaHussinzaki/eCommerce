@@ -1,0 +1,46 @@
+@use "functions" as F;
+
+// Colors
+$cyanLight: #0573f0;
+$cyanNorm: #0769da;
+$cyanDark: #27323f;
+$grayishBlue: #48515b;
+$mainColor: #f7fbfc;
+$white: #ffffff;
+$lightGray: #dce3e5;
+$pureGray: #9ca7ab;
+$black: #000000;
+
+// padding
+
+$xlg-padding: 6.67em;
+$lg-padding: 5.67em;
+$slg-padding: 4.34em;
+$md-padding: 3.34em;
+$sm-padding: 6.67em;
+$xs-padding: 2.4em;
+$xxs-padding: 1.4em;
+
+// font sizes
+
+$fs-normal-l: F.torem(16);
+$fs-normal-m: F.torem(14);
+$fs-normal-s: F.torem(12);
+
+$fs-huge-xl: F.torem(60);
+$fs-huge-l: F.torem(42);
+$fs-huge-m: F.torem(40);
+$fs-huge-s: F.torem(30);
+
+// font family
+$ff-popin-sans: "Poppins", sans-serif;
+
+//BreakPoints
+
+$large-screen: F.toem(992);
+$medium-screen: F.toem(746);
+$small-screen: F.toem(554);
+
+// $large-screen: 64em; // 1024px
+$medium-screen: 48em; // 768px
+// $small-screen: 37.5em; // 600px

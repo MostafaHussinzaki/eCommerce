@@ -1,0 +1,47 @@
+@use "../abstract/mixins" as M;
+@use "../abstract/variables" as V;
+@use "../abstract/functions" as F;
+
+.category {
+	background-color: V.$white;
+	border: solid 1px V.$lightGray;
+	margin-top: V.$md-padding;
+	padding-top: F.toem(30);
+	margin-inline: 20px;
+
+	> h1 {
+		color: V.$cyanNorm;
+		font-weight: 700;
+		font-size: F.torem(25);
+		@include M.respond-up(V.$small-screen) {
+			font-size: F.torem(20);
+		}
+	}
+
+	> div {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px;
+		justify-content: center;
+		> a > div {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding: F.toem(40) F.toem(20);
+			border-bottom: solid 1px V.$lightGray;
+			transition: all;
+			transition-duration: 200ms;
+			&:hover {
+				border-bottom: solid 1px V.$cyanNorm;
+			}
+			h2 {
+				font-weight: 500;
+			}
+			p {
+				color: V.$grayishBlue;
+				font-size: 12px;
+			}
+		}
+	}
+}

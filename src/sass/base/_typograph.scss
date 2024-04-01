@@ -1,0 +1,44 @@
+@use "../abstract/mixins" as M;
+@use "../abstract/functions" as F;
+@use "../abstract/variables" as V;
+
+header {
+	font-size: F.torem(16);
+	@include M.respond-up(V.$small-screen) {
+		font-size: F.torem(12);
+	}
+}
+
+.landing {
+	.card {
+		h1 {
+			font-size: F.torem(40);
+			@include M.respond-up(V.$small-screen) {
+				font-size: F.torem(30);
+			}
+		}
+
+        p {
+            font-size: F.torem(14);
+        }
+	}
+
+    .pros {
+        >div {
+            >div {
+                h3 {
+                    font-size: F.torem(14);
+                    @include M.respond-up(V.$small-screen) {
+                        font-size: F.torem(12);
+                    }
+                }
+                p {
+                    font-size: F.torem(12);
+                    @include M.respond-up(V.$small-screen) {
+                        font-size: F.torem(10);
+                    }
+                }
+            }
+        }
+    }
+}

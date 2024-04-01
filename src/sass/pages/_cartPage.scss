@@ -1,0 +1,94 @@
+@use "../abstract/functions" as F;
+@use "../abstract/mixins" as M;
+@use "../abstract/variables" as V;
+
+.cart-page {
+	padding-top: V.$xs-padding;
+	padding-bottom: V.$xs-padding;
+	h1 {
+		color: V.$cyanNorm;
+		font-size: 2.5rem;
+		font-weight: 600;
+		padding-bottom: 0.625em;
+	}
+
+	> div {
+		display: flex;
+		justify-content: space-between;
+
+		@include M.respond-up(V.$large-screen) {
+			flex-direction: column;
+		}
+		.cart-page__table {
+			width: 69%;
+			@include M.respond-up(V.$large-screen) {
+				width: 100%;
+			}
+		}
+		.cart-page__infos {
+			position: sticky;
+			top: 1em;
+			width: 30%;
+			border: 1px solid V.$lightGray;
+			background-color: V.$white;
+			padding-bottom: F.toem(20);
+			height: fit-content;
+			@include M.respond-up(V.$large-screen) {
+				width: 100%;
+			}
+			&__title {
+				background-color: V.$mainColor;
+				padding: F.toem(14) F.toem(20);
+				border-bottom: 1px solid V.$lightGray;
+				margin-bottom: F.toem(20);
+				> h2 {
+					font-size: F.torem(20);
+					font-weight: bold;
+					color: V.$cyanDark;
+				}
+			}
+
+			&__totals {
+				background-color: V.$white;
+				> p {
+					display: flex;
+					justify-content: space-around;
+					color: V.$grayishBlue;
+					border-bottom: 1px solid V.$lightGray;
+					padding: F.toem(11) F.toem(16);
+				}
+			}
+			&__coupon {
+				margin-bottom: 1em;
+				margin-top: 1em;
+				color: V.$grayishBlue;
+				margin-inline: F.toem(20);
+
+				> form {
+					width: 80%;
+					display: flex;
+					gap: 10px;
+					@include M.respond-up(V.$small-screen) {
+						flex-direction: column;
+					}
+					input {
+						width: 150px;
+						border: 1px solid V.$lightGray;
+						outline: none;
+						padding-top: F.toem(10);
+						padding-bottom: F.toem(10);
+						padding-inline: 20px;
+						@include M.respond-up(V.$large-screen) {
+							width: 100%;
+						}
+					}
+				}
+			}
+
+			> button {
+				margin-inline: F.toem(20);
+				width: calc(100% - F.toem(40));
+			}
+		}
+	}
+}

@@ -1,0 +1,127 @@
+@use "../abstract/mixins" as M;
+@use "../abstract/variables" as V;
+@use "../abstract/functions" as F;
+
+.product-detail {
+	display: flex;
+	gap: F.toem(20);
+	@include M.respond-up(V.$medium-screen) {
+		flex-direction: column;
+	}
+	&__images {
+		width: 50%;
+		@include M.respond-up(V.$medium-screen) {
+			width: 100%;
+		}
+		&__main {
+			padding: F.toem(20);
+			> img {
+				width: 100%;
+				height: 300px;
+				cursor: pointer;
+				transition: all;
+				transition-duration: 200ms;
+			}
+
+			> img:hover {
+				transform: rotate(1deg) scale(1.1);
+			}
+		}
+		&__select {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			gap: 10px;
+			justify-content: space-between;
+			width: 100%;
+			> img {
+				max-width: 100%;
+				opacity: 0.5;
+				cursor: pointer;
+				transition: all;
+				transition-duration: 100ms;
+			}
+			> img:hover {
+				opacity: 1;
+			}
+
+			> img.active {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__text {
+		padding-top: F.toem(20);
+		width: 50%;
+		@include M.respond-up(V.$medium-screen) {
+			width: 100%;
+		}
+
+		&__path {
+			margin: 0 0 1em;
+			padding: 0;
+			font-size: 0.92em;
+			color: #777;
+		}
+
+		&__name {
+			margin: 0 0 0.5em 0;
+			font-size: F.toem(26);
+			font-weight: 600;
+		}
+		&__description {
+			color: V.$grayishBlue;
+			margin-bottom: F.toem(10);
+		}
+
+		&__price {
+			font-size: 1.5rem;
+			font-weight: 500;
+			margin: 0 0 0.2em;
+			.salexx {
+				color: V.$pureGray;
+				text-decoration: line-through;
+				margin-right: F.toem(10);
+			}
+			.realxx {
+				color: V.$grayishBlue;
+			}
+		}
+
+		&__feature {
+			padding-top: F.toem(20);
+			color: V.$grayishBlue;
+			margin-bottom: F.toem(20);
+			h3 {
+				font-weight: 500;
+			}
+
+			ul {
+				margin-left: F.toem(20);
+				list-style-type: disc;
+			}
+		}
+		&__action {
+			display: flex;
+			> div {
+				margin-right: F.toem(20);
+			}
+			> a {
+				margin-left: F.toem(20);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: V.$cyanNorm;
+			}
+		}
+		&__category {
+			margin-top: F.toem(20);
+			border-top: 1px solid V.$lightGray;
+			font-size: 14px;
+			padding-top: F.toem(10);
+			> a {
+				color: V.$cyanNorm;
+			}
+		}
+	}
+}

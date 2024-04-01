@@ -1,0 +1,21 @@
+@use "../abstract/mixins" as M;
+@use "../abstract/variables" as V;
+@use "../abstract/functions" as F;
+
+.pagination {
+	margin-top: F.toem(20);
+	a {
+		padding: F.toem(12);
+		background-color: V.$white;
+		margin-right: F.toem(5);
+		border: solid 1px V.$cyanNorm;
+		color: V.$cyanLight;
+		transition: all;
+		transition-duration: 200ms;
+
+		&:hover {
+			background-color: V.$cyanNorm;
+			color: V.$white;
+		}
+	}
+}

@@ -1,0 +1,83 @@
+@use "../abstract/functions" as F;
+@use "../abstract/mixins" as M;
+@use "../abstract/variables" as V;
+
+.search-page {
+	display: flex;
+	margin-top: V.$xs-padding;
+	gap: F.toem(40);
+	margin-bottom: V.$xs-padding;
+	@include M.respond-up(V.$large-screen) {
+		flex-direction: column;
+	}
+
+	&__items {
+		width: 70%;
+		@include M.respond-up(V.$large-screen) {
+			width: 100%;
+		}
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		background-color: V.$white;
+		padding: F.toem(30);
+
+		&__error {
+			h1 {
+				color: V.$cyanDark;
+				font-weight: 600;
+				font-size: V.$fs-huge-s;
+				padding-bottom: F.toem(30);
+			}
+			p {
+				color: V.$grayishBlue;
+				padding-bottom: F.toem(20);
+			}
+		}
+	}
+
+	&__actions {
+		width: 30%;
+		@include M.respond-up(V.$large-screen) {
+			width: 100%;
+		}
+		@include M.respond-up(V.$small-screen) {
+			width: 100%;
+			font-size: F.torem(12);
+		}
+
+		> h2 {
+			color: V.$cyanDark;
+			font-weight: 600;
+			font-size: F.toem(25);
+			margin-top: F.toem(15);
+		}
+	}
+
+	form {
+		display: flex;
+		gap: 10px;
+		@include M.respond-up(V.$small-screen) {
+			flex-direction: column;
+		}
+		> input {
+			background-color: white;
+			border: 1px solid V.$pureGray;
+			outline: none;
+			padding: F.toem(3);
+		}
+		> button {
+			padding: 0.7em 1em;
+			border: none;
+			cursor: pointer;
+			background-color: V.$cyanDark;
+			color: V.$white;
+			font-weight: 500;
+			transition: all;
+			transition-duration: 200ms;
+			&:hover {
+				background-color: V.$cyanNorm;
+			}
+		}
+	}
+}

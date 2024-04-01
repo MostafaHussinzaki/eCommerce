@@ -1,0 +1,34 @@
+@use "../abstract/mixins" as M;
+@use "../abstract/variables" as V;
+@use "../abstract/functions" as F;
+
+.cart-input {
+	border: solid 1px V.$pureGray;
+	width: fit-content;
+	@include M.respond-up(V.$small-screen) {
+		font-size: 0.8rem;
+	}
+
+	button {
+		background-color: transparent;
+		outline: none;
+		border: none;
+		font-size: F.toem(18);
+		padding: F.toem(3) F.toem(5);
+		width: F.toem(38);
+		min-width: F.toem(30);
+		cursor: pointer;
+	}
+	 input {
+		padding: F.toem(8) F.toem(6);
+		border: none;
+		outline: none;
+		border-left: solid 1px V.$pureGray;
+		border-right: solid 1px V.$pureGray;
+		width: F.toem(38);
+		min-width: F.toem(32);
+		font-size: F.toem(14);
+		height: 100%;
+		text-align: center;
+	}
+}

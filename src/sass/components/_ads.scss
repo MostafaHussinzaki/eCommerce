@@ -1,0 +1,19 @@
+@use "../abstract/mixins" as M;
+@use "../abstract/variables" as V;
+@use "../abstract/functions" as F;
+
+.ads {
+	padding-top: V.$md-padding;
+	display: flex;
+	justify-content: space-between;
+	@include M.respond-up(V.$small-screen) {
+		flex-direction: column;
+	}
+	a {
+		width: 49%;
+		@include M.respond-up(V.$small-screen) {
+            margin-bottom: F.toem(10);
+			width: 100%;
+		}
+	}
+}

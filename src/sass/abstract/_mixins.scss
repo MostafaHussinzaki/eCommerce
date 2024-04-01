@@ -1,0 +1,53 @@
+@use "variables" as V;
+@use "functions" as F;
+
+@mixin Center() {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin Centerhorizontal() {
+	position: absolute;
+	left: 50%;
+	transform: translatex(-50%);
+}
+
+// cover background
+
+@mixin cover-background {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+// border radius
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+	background-clip: padding-box; /* stops bg color from leaking outside the border: */
+}
+
+// media querys
+
+@mixin respond-up($size) {
+	@if $size == V.$small-screen {
+		@media (max-width: V.$small-screen) {
+			@content;
+		}
+	}
+
+	@if $size == V.$medium-screen {
+		@media (max-width: V.$medium-screen) {
+			@content;
+		}
+	}
+
+	@if $size == V.$large-screen {
+		@media (max-width: V.$large-screen) {
+			@content;
+		}
+	}
+}

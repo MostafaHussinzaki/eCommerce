@@ -1,0 +1,14 @@
+@use "../abstract/variables" as V;
+
+html {
+	font-size: 100%;
+	font-family: V.$ff-popin-sans;
+	scroll-behavior: smooth;
+}
+body {
+	background-color: V.$mainColor;
+}
+
+a {
+	color: inherit;
+}

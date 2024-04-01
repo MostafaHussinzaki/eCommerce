@@ -1,0 +1,60 @@
+@use "../abstract/functions" as F;
+@use "../abstract/mixins" as M;
+@use "../abstract/variables" as V;
+
+footer {
+	.footer-links {
+		background-color: V.$white;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		@include M.respond-up(V.$medium-screen) {
+			grid-template-columns: 1fr;
+			justify-content: center;
+			text-align: center;
+		}
+		padding-top: V.$slg-padding;
+		padding-bottom: V.$md-padding;
+		> div {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: F.toem(20);
+			img {
+				filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(110deg)
+					brightness(70%) contrast(98%);
+				max-width: 150px;
+			}
+
+			h2 {
+				font-size: 1.375rem;
+				color: V.$black;
+				font-weight: 500;
+				padding-bottom: F.toem(40);
+			}
+
+			ul {
+				li {
+					a {
+						color: V.$cyanNorm;
+						padding-bottom: F.toem(5);
+					}
+				}
+			}
+		}
+	}
+	.footer-copywrites {
+		padding-top: F.toem(30);
+		padding-bottom: F.toem(30);
+		background-color: V.$cyanDark;
+		color: V.$pureGray;
+		p {
+			width: 50%;
+			font-size: F.toem(14);
+			@include M.respond-up(V.$medium-screen) {
+				width: 100%;
+				text-align: center;
+			}
+		}
+	}
+}
