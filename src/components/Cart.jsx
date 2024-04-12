@@ -31,7 +31,9 @@ const Cart = function () {
 		<dialog className="cart-modal">
 			<div className="cart-modal__title">
 				<h1>Shopping Cart</h1>
-				<span onClick={onClose}>×</span>
+				<span onClick={onClose} style={{ cursor: "pointer" }}>
+					×
+				</span>
 			</div>
 			<>
 				<div className="cart-modal__items">
