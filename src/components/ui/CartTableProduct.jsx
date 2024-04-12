@@ -44,6 +44,7 @@ const CartTableProduct = function ({ id, image, name, price, quantity }) {
 			<td className="no-padding">
 				<span className="mobile-label">Quantity:</span>
 				<CartInput
+					key={quantity}
 					handleAddItem={handleAddItem}
 					handleRemoveItem={handleRemoveItem}
 					quantity={quantity}

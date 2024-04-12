@@ -13,7 +13,6 @@ const CartInput = function ({
 			setCount(newValue);
 		}
 	};
-
 	const increment = () => {
 		setCount((prevCount) => prevCount + 1);
 		handleAddItem();
@@ -29,12 +28,14 @@ const CartInput = function ({
 	return (
 		<div className="cart-input">
 			<button onClick={decrement}>-</button>
-			<input
+			<span
 				type="text"
 				// onChange={handleInputChange}
-				value={count}
+				// value={count}
 				data-count={count}
-			/>
+			>
+				{count}
+			</span>
 			<button onClick={increment}>+</button>
 		</div>
 	);

@@ -11,9 +11,13 @@ const CheckoutForm = function ({ totalPrice }) {
 		setIsCoupon(true);
 	};
 
+	const handleSubmit = (e) => {
+		e.preventDefault();
+	};
+
 	return (
 		<div className="checkout-data__form">
-			<form>
+			<form onSubmit={handleSubmit}>
 				<div className="checkout-data__form__customer">
 					<h2>Customer information</h2>
 					<input
@@ -28,8 +32,18 @@ const CheckoutForm = function ({ totalPrice }) {
 				<div className="checkout-data__form__billing">
 					<h2>Billing details</h2>
 					<div className="flex">
-						<input type="text" placeholder="First name *" className="input" required/>
-						<input type="text" placeholder="last name*" className="input" required/>
+						<input
+							type="text"
+							placeholder="First name *"
+							className="input"
+							required
+						/>
+						<input
+							type="text"
+							placeholder="last name*"
+							className="input"
+							required
+						/>
 					</div>
 					<input type="text" placeholder="Company name" className="input" />
 					<Options />
@@ -47,8 +61,18 @@ const CheckoutForm = function ({ totalPrice }) {
 						/>
 					</div>
 					<div className="flex">
-						<input type="text" placeholder="town/City*" className="input" required/>
-						<input type="text" placeholder="ZIP Code*" className="input" required/>
+						<input
+							type="text"
+							placeholder="town/City*"
+							className="input"
+							required
+						/>
+						<input
+							type="text"
+							placeholder="ZIP Code*"
+							className="input"
+							required
+						/>
 					</div>
 					<input type="text" placeholder="Phone*" className="input" />
 				</div>
@@ -77,7 +101,9 @@ const CheckoutForm = function ({ totalPrice }) {
 						arrangements.
 					</Message>
 				</div>
-				<Button type="submit">Place Order: {totalPrice}</Button>
+				<Button type="submit" disaple>
+					Place Order: {totalPrice}
+				</Button>
 			</form>
 		</div>
 	);

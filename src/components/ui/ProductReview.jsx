@@ -1,10 +1,14 @@
 import Button from "./Button";
 
 const ProductReview = function ({ name }) {
+	const handleSubmit = (e) => {
+		e.preventDefault();
+	};
+
 	return (
 		<div className="product-page__more__review">
 			<p>There are no review yet.</p>
-			<form>
+			<form onSubmit={handleSubmit}>
 				<h1>Be the first to review {name}</h1>
 				<p>
 					Your email address will not be published. Required fields are marked *

@@ -15,6 +15,7 @@ const CartItem = function ({ name, image, id, quantity, price }) {
 		);
 	};
 
+
 	const handleRemoveItem = () => {
 		dispatch(cartAction.removeItem({ id }));
 	};
@@ -33,6 +34,7 @@ const CartItem = function ({ name, image, id, quantity, price }) {
 				</div>
 				<div className="item-actions">
 					<CartInput
+						key={quantity}
 						quantity={quantity}
 						handleAddItem={handleAddItem}
 						handleRemoveItem={handleRemoveItem}

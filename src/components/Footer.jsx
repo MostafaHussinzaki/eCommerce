@@ -64,7 +64,7 @@ const Footer = function () {
 				</div>
 			</section>
 			<section className="footer-copywrites container">
-				<p>© 2024 Electronic Store. Powered by Electronic Store</p>
+				<p>© 2024 eCommerce Store. Powered by eCommerce Store</p>
 			</section>
 		</footer>
 	);

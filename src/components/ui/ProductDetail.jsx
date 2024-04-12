@@ -5,7 +5,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { cartAction } from "../../store/slice/cartSlice";
-import { addToLocalStorage } from "../../utils/helper";
 
 const ProductDetail = function ({
 	name,
@@ -29,8 +28,8 @@ const ProductDetail = function ({
 	);
 
 	const handleAddtoCart = function (id, name, price, image) {
-		const quantity = +document.querySelector(".cart-input > input").dataset
-			.count;
+		const quantity =
+			+document.querySelector(".cart-input > span").dataset.count;
 
 		dispatch(
 			cartAction.addItem({
@@ -38,7 +37,7 @@ const ProductDetail = function ({
 				quantity,
 			})
 		);
-		
+
 		setIsViewCart(true);
 	};
 
@@ -46,30 +45,30 @@ const ProductDetail = function ({
 		<div className="product-detail">
 			<div className="product-detail__images">
 				<div className="product-detail__images__main">
-					<img src={images[activeImage]} alt="" />
+					<img src={images[activeImage]} alt="Product Image" />
 				</div>
 				<div className="product-detail__images__select">
 					<img
 						src={images[0]}
-						alt=""
+						alt="Product Image"
 						onClick={() => setActiveImage(0)}
 						className={activeImage === 0 ? "active" : ""}
 					/>
 					<img
 						src={images[1]}
-						alt=""
+						alt="Product Image"
 						onClick={() => setActiveImage(1)}
 						className={activeImage === 1 ? "active" : ""}
 					/>
 					<img
 						src={images[2]}
-						alt=""
+						alt="Product Image"
 						onClick={() => setActiveImage(2)}
 						className={activeImage === 2 ? "active" : ""}
 					/>
 					<img
 						src={images[3]}
-						alt=""
+						alt="Product Image"
 						onClick={() => setActiveImage(3)}
 						className={activeImage === 3 ? "active" : ""}
 					/>

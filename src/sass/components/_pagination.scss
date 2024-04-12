@@ -3,7 +3,10 @@
 @use "../abstract/functions" as F;
 
 .pagination {
-	margin-top: F.toem(20);
+	margin-top: 1.25em;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
 	a {
 		padding: F.toem(12);
 		background-color: V.$white;

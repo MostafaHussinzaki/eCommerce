@@ -15,7 +15,6 @@ const Cart = function () {
 	const onClose = () => {
 		document.querySelector(".cart-modal").close();
 	};
-
 	useEffect(() => {
 		const dialog = document.querySelector(".cart-modal");
 		const eventFunction = (event) => {

@@ -21,6 +21,10 @@ const CartPage = function () {
 		setIsCoupon(true);
 	};
 
+	const handleSubmit = (e) => {
+		e.preventDefault()
+	}
+
 	return (
 		<section className="cart-page container">
 			<h1>Cart</h1>
@@ -69,7 +73,7 @@ const CartPage = function () {
 							<p onClick={handleShowCoupon} style={{ cursor: "pointer" }}>
 								Have a Coupon?
 							</p>
-							<form className={!isCoupon ? "hidden" : ""}>
+							<form className={!isCoupon ? "hidden" : ""}  onSubmit={handleSubmit}>
 								<input type="text" placeholder="Coupon Code" />
 								<Button>Apply</Button>
 							</form>

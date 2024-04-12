@@ -2,6 +2,7 @@ import arrowdown from "../../assets/arrowdown.png";
 import { useSelector, useDispatch } from "react-redux";
 import { uiActions } from "../../store/slice/uiSlice";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const MobileMenu = function ({ categories, maxCategory }) {
 	const dispatch = useDispatch();
@@ -20,7 +21,7 @@ const MobileMenu = function ({ categories, maxCategory }) {
 	const toggleMenu = () => {
 		dispatch(uiActions.toggleMenu());
 	};
-
+	const rotationValue = isShowCategoryMenu ? 180 : 0;
 	const formatCategories = categories.slice(1, 7);
 	const isMore = categories.length > maxCategory;
 
@@ -35,9 +36,12 @@ const MobileMenu = function ({ categories, maxCategory }) {
 						<Link to={"shop"} onClick={toggleMenu}>
 							All products
 						</Link>
-						<span onClick={handleToggleCategoryMenu}>
+						<motion.span
+							onClick={handleToggleCategoryMenu}
+							animate={{ rotate: rotationValue }}
+						>
 							<img src={arrowdown} alt="" />
-						</span>
+						</motion.span>
 					</div>
 					<ul
 						className="allProduct-category"
