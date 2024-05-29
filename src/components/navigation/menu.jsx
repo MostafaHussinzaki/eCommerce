@@ -26,8 +26,8 @@ const menu = function ({ categories, maxCategory }) {
 					</span>
 					<ul className="allProduct-category allProduct-category1">
 						{formatCategories.map((category) => (
-							<li key={category}>
-								<Link to={`/shop/${category}`}>{category}</Link>
+							<li key={category.name}>
+								<Link to={`/shop/${category.slug}`}>{category.name}</Link>
 							</li>
 						))}
 						{isMore && (

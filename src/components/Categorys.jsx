@@ -9,7 +9,11 @@ const Categorys = function () {
 				<h1>Categories</h1>
 				<div>
 					{categories.map((category) => (
-						<Category title={category} key={category} />
+						<Category
+							title={category.name}
+							key={category.name}
+							slug={category.slug}
+						/>
 					))}
 				</div>
 			</section>

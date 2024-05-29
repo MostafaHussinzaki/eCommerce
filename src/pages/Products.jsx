@@ -1,7 +1,6 @@
 import ProductItem from "../components/ui/ProductItem";
 import { BASE_URL } from "../utils/config";
 import {
-	Link,
 	useSearchParams,
 	useParams,
 	useLoaderData,
@@ -11,7 +10,7 @@ import {
 const Products = function () {
 	const { products, total } = useLoaderData("products");
 	const { category } = useParams();
-	const pageNumbers = total / 10;
+	const pageNumbers = Math.round(total / 10);
 	const [searchParams] = useSearchParams();
 	let page = searchParams.get("page") || 0;
 

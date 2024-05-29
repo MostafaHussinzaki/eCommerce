@@ -48,8 +48,8 @@ const MobileMenu = function ({ categories, maxCategory }) {
 						style={{ display: isShowCategoryMenu ? "block" : "none" }}
 					>
 						{formatCategories.map((category) => (
-							<li key={category} onClick={handleCloseMenu}>
-								<Link to={`/shop/${category}`}>&gt; {category}</Link>
+							<li key={category.name} onClick={handleCloseMenu}>
+								<Link to={`/shop/${category.slug}`}>&gt; {category.name}</Link>
 							</li>
 						))}
 						{isMore && (

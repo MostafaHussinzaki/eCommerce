@@ -7,12 +7,12 @@ const CategorySide = function () {
 			<h1>Categories</h1>
 			<ul>
 				{categories.map((category) => (
-					<li to={category} key={category}>
+					<li to={category.slug} key={category.name}>
 						<NavLink
-							to={category}
+							to={category.slug}
 							className={({ isActive }) => (isActive ? "active" : "")}
 						>
-							{category}
+							{category.name}
 						</NavLink>
 					</li>
 				))}
